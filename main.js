@@ -6,7 +6,7 @@ fetch(url, {
 })
 .then(res => res.json())
 .then(res => {
-    // console.log(res);
+    console.log(res);
     // console.log(res.articles[4].urlToImage)
     let boxes = document.querySelectorAll(".newsbox")
     document.getElementById("img1").src = res.articles[0].urlToImage
@@ -24,7 +24,33 @@ fetch(url, {
     document.getElementById("img13").src = res.articles[12].urlToImage
     document.getElementById("img14").src = res.articles[13].urlToImage
     document.getElementById("img15").src = res.articles[14].urlToImage
+    
+    // for (let i=0; i<15; i++) {
+        // }
+        
+        
+        for (let i=0; i<allBoxes.length; i++) {
+            allBoxes[i].addEventListener("click", function openModal() {
+                modal.style.display = "block";
+            document.getElementById("text").innerText = res.articles[i].description
+        })
+    }
+    
 
 });
 
+let modal = document.querySelector("#myModal");
+let span = document.querySelector(".close");
+console.log(span)
+let allBoxes = document.querySelectorAll(".newsbox");
 
+span.addEventListener("click", function closeModal() {
+    modal.style.display = "none";
+    console.log("you clicked closeModal")
+})
+
+
+// window.addEventListener("click", function windowClicked() {
+//     modal.style.display = "none";
+//     console.log("clicked window")
+// })
