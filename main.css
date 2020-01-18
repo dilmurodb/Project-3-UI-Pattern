@@ -40,11 +40,20 @@ body {
 }
 
 .modal-content {
+  display: flex;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.text {
+  margin: 10px;
+}
+
+.picture {
+  margin: 10px;
 }
 
 .close:hover,
